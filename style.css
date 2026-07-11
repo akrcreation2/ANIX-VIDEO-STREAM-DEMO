@@ -1,0 +1,143 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(180deg,#050816,#08142b,#030712);
+    color:white;
+    min-height:100vh;
+}
+
+.app{
+    width:95%;
+    max-width:1100px;
+    margin:30px auto;
+}
+
+.topbar{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.logo{
+    font-size:42px;
+    font-weight:700;
+    color:#fff;
+    letter-spacing:2px;
+}
+
+.player-box{
+    position:relative;
+    width:100%;
+    background:#000;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+}
+
+video{
+    width:100%;
+    display:block;
+    background:black;
+}
+
+.controls{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:15px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.85)
+    );
+}
+
+.controls button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:12px;
+    padding:10px 14px;
+    cursor:pointer;
+    font-size:15px;
+    transition:.25s;
+}
+
+.controls button:hover{
+    background:#1d4ed8;
+}
+
+#seek{
+    flex:1;
+    accent-color:#3b82f6;
+}
+
+.time{
+    font-size:14px;
+    color:#ddd;
+    min-width:90px;
+    text-align:center;
+}
+
+.url-box{
+    margin-top:25px;
+    display:flex;
+    gap:10px;
+}
+
+.url-box input{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:#111827;
+    color:white;
+    font-size:16px;
+    outline:none;
+}
+
+.url-box button{
+    padding:15px 30px;
+    border:none;
+    border-radius:14px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.url-box button:hover{
+    background:#1d4ed8;
+}
+
+@media(max-width:768px){
+
+.logo{
+    font-size:30px;
+}
+
+.controls{
+    flex-wrap:wrap;
+}
+
+.time{
+    width:100%;
+}
+
+.url-box{
+    flex-direction:column;
+}
+
+.url-box button{
+    width:100%;
+}
+
+}
