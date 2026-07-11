@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANiX Video Player</title>
+
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+
+<style>
+body{
+    margin:0;
+    background:#111;
+    color:#fff;
+    font-family:Arial,sans-serif;
+}
+.container{
+    max-width:1000px;
+    margin:30px auto;
+    padding:20px;
+}
+input{
+    width:100%;
+    padding:12px;
+    font-size:16px;
+    border-radius:8px;
+    border:none;
+}
+button{
+    margin-top:10px;
+    padding:12px 25px;
+    background:#6d28d9;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+video{
+    width:100%;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>ANiX Video Player</h2>
+
+<input
+id="url"
+placeholder="Paste your MP4 or HLS (.m3u8) URL here">
+
+<button onclick="playVideo()">Play</button>
+
+<video id="player" controls playsinline></video>
+
+</div>
+
+<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+
+<script>
+
+const player=new Plyr('#player');
+
+function playVideo(){
+
+const url=document.getElementById("url").value;
+
+const video=document.getElementById("player");
+
+video.src=url;
+
+video.load();
+
+video.play();
+
+}
+
+</script>
+
+</body>
+</html>
