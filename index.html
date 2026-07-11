@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANiX Video Player</title>
+<h1 class="logo">
+    ANiX <span>ViDEO STREAM</span>
+</h1>
 
 <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
 
@@ -37,6 +39,69 @@ button{
 }
 video{
     width:100%;
+}
+    .logo span{
+    color:#ffffff;
+    -webkit-text-fill-color:#ffffff;
+}
+    .logo{
+    text-align:center;
+    font-size:48px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:6px;
+    font-family:'Arial Black',sans-serif;
+    background:linear-gradient(
+        90deg,
+        #ff0000,
+        #ff0077,
+        #9d00ff,
+        #6f00ff,
+        #ff0000
+    );
+    background-size:400%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:
+        gradientMove 6s linear infinite,
+        glow 1.5s ease-in-out infinite alternate,
+        float 4s ease-in-out infinite;
+}
+
+@keyframes gradientMove{
+    0%{background-position:0%;}
+    100%{background-position:400%;}
+}
+
+@keyframes glow{
+    from{
+        filter:
+        drop-shadow(0 0 5px #ff0055)
+        drop-shadow(0 0 10px #ff0055)
+        drop-shadow(0 0 20px #a200ff);
+    }
+
+    to{
+        filter:
+        drop-shadow(0 0 15px #ff0055)
+        drop-shadow(0 0 30px #ff0055)
+        drop-shadow(0 0 60px #9d00ff);
+    }
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px) scale(1);
+    }
+
+    50%{
+        transform:translateY(-3px) scale(1.02);
+    }
+
+    100%{
+        transform:translateY(0px) scale(1);
+    }
 }
 </style>
 
