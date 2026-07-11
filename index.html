@@ -3,164 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANiX Video Stream</title>
 
-<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+<link rel="stylesheet" href="style.css">
 
-<style>
-body{
-    margin:0;
-    background:#111;
-    color:#fff;
-    font-family:Arial,sans-serif;
-}
-.container{
-    max-width:1000px;
-    margin:30px auto;
-    padding:20px;
-}
-input{
-    width:100%;
-    padding:12px;
-    font-size:16px;
-    border-radius:8px;
-    border:none;
-}
-button{
-    margin-top:10px;
-    padding:12px 25px;
-    background:#6d28d9;
-    color:#fff;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-}
-video{
-    width:100%;
-}
-    body{
-    margin:0;
-    background:linear-gradient(180deg,#0b0b14,#111827,#0b0b14);
-    color:#fff;
-    font-family:'Segoe UI',sans-serif;
-}
-
-.container{
-    max-width:1000px;
-    margin:40px auto;
-    padding:25px;
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(18px);
-    border-radius:20px;
-    border:1px solid rgba(255,255,255,.08);
-    box-shadow:0 0 30px rgba(0,0,0,.4);
-}
-
-.logo{
-    text-align:center;
-    font-size:42px;
-    font-weight:800;
-    letter-spacing:2px;
-    margin-bottom:25px;
-    color:#ffffff;
-}
-
-.logo span{
-    color:#3b82f6;
-}
-
-input{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:14px;
-    background:#1b1b2f;
-    color:white;
-    font-size:16px;
-    outline:none;
-    transition:.3s;
-}
-
-input:focus{
-    box-shadow:0 0 15px #2563eb;
-}
-
-button{
-    width:100%;
-    margin-top:15px;
-    padding:15px;
-    border:none;
-    border-radius:14px;
-    background:linear-gradient(90deg,#2563eb,#1d4ed8);
-    color:white;
-    font-size:17px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
-}
-
-button:hover{
-    transform:translateY(-2px);
-    box-shadow:0 0 20px rgba(37,99,235,.6);
-}
-
-video{
-    width:100%;
-    margin-top:25px;
-    border-radius:18px;
-    overflow:hidden;
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
 
-<div class="container">
+<div class="app">
 
-<h1 class="logo">
-ANiX <span>ViDEO STREAM</span>
-</h1>
-    
-<input
-id="url"
-placeholder="Paste your MP4 or HLS (.m3u8) URL here">
+<header class="topbar">
+    <h1 class="logo">ANiX Video Stream</h1>
+</header>
 
-<button onclick="playVideo()">Play</button>
+<div class="player-box">
 
-<video id="player" controls playsinline></video>
+<video id="player" playsinline></video>
+
+<div class="controls">
+
+<button id="rewind">⏪ 10</button>
+
+<button id="play">▶</button>
+
+<button id="forward">10 ⏩</button>
+
+<input id="seek" type="range" value="0">
+
+<div class="time">
+<span id="current">00:00</span>
+/
+<span id="duration">00:00</span>
+</div>
+
+<button id="fullscreen">⛶</button>
 
 </div>
 
-<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+</div>
 
-<script>
+<div class="url-box">
 
-const player = new Plyr('#player');
+<input
+id="url"
+placeholder="Paste MP4 or HLS URL">
 
-const params = new URLSearchParams(window.location.search);
-const videoUrl = params.get("video");
+<button id="load">
+Load Video
+</button>
 
-if (videoUrl) {
-    const video = document.getElementById("player");
+</div>
 
-    video.src = decodeURIComponent(videoUrl);
+</div>
 
-    video.load();
-
-    video.play().catch(() => {
-        console.log("Autoplay blocked");
-    });
-}
-
-function playVideo() {
-    const url = document.getElementById("url").value;
-    const video = document.getElementById("player");
-
-    video.src = url;
-    video.load();
-    video.play();
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
