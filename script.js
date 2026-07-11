@@ -145,3 +145,90 @@ pip.onclick=async()=>{
     }
 
 };
+// Keyboard Shortcuts
+document.addEventListener("keydown",(e)=>{
+
+    switch(e.key){
+
+        case " ":
+            e.preventDefault();
+
+            if(video.paused){
+                video.play();
+            }else{
+                video.pause();
+            }
+        break;
+
+        case "ArrowLeft":
+            video.currentTime-=10;
+        break;
+
+        case "ArrowRight":
+            video.currentTime+=10;
+        break;
+
+        case "f":
+        case "F":
+            if(document.fullscreenElement){
+                document.exitFullscreen();
+            }else{
+                video.requestFullscreen();
+            }
+        break;
+
+        case "m":
+        case "M":
+            video.muted=!video.muted;
+        break;
+
+    }
+
+});
+video.ondblclick=()=>{
+
+    if(document.fullscreenElement){
+
+        document.exitFullscreen();
+
+    }else{
+
+        video.requestFullscreen();
+
+    }
+
+};
+
+const controls=document.querySelector(".controls");
+
+let hideTimer;
+
+function showControls(){
+
+    controls.style.opacity="1";
+
+    clearTimeout(hideTimer);
+
+    hideTimer=setTimeout(()=>{
+
+        if(!video.paused){
+
+            controls.style.opacity="0";
+
+        }
+
+    },3000);
+
+}
+
+video.addEventListener("mousemove",showControls);
+
+video.addEventListener("touchstart",showControls);
+
+video.addEventListener("play",showControls);
+
+video.addEventListener("pause",()=>{
+
+    controls.style.opacity="1";
+
+});
