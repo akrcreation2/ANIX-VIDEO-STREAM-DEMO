@@ -63,11 +63,21 @@ placeholder="Paste your MP4 or HLS (.m3u8) URL here">
 
 const player=new Plyr('#player');
 
-const params = new URLSearchParams(window.location.search);
-const video = params.get("video");
+const player = new Plyr('#video-player');
 
-if (video) {
-    document.getElementById("player").src = video;
+const params = new URLSearchParams(window.location.search);
+const videoUrl = params.get("video");
+
+if (videoUrl) {
+    const video = document.getElementById("video-player");
+
+    video.src = decodeURIComponent(videoUrl);
+
+    video.load();
+
+    video.play().catch(() => {
+        console.log("Autoplay blocked by browser");
+    });
 }
     
     function playVideo(){
