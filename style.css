@@ -163,3 +163,15 @@ video{
     padding:10px 14px;
     cursor:pointer;
 }
+
+.controls{
+
+    transition:opacity .35s;
+
+}
+
+.player-box{
+
+    cursor:default;
+
+}
