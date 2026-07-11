@@ -37,34 +37,77 @@ button{
 video{
     width:100%;
 }
-    .logo{
+    body{
+    margin:0;
+    background:linear-gradient(180deg,#0b0b14,#111827,#0b0b14);
+    color:#fff;
+    font-family:'Segoe UI',sans-serif;
+}
+
+.container{
+    max-width:1000px;
+    margin:40px auto;
+    padding:25px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(18px);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 0 30px rgba(0,0,0,.4);
+}
+
+.logo{
     text-align:center;
     font-size:42px;
     font-weight:800;
-    font-family:'Poppins',sans-serif;
     letter-spacing:2px;
     margin-bottom:25px;
-
-    background:linear-gradient(90deg,#ff2d55,#8b5cf6,#ff2d55);
-    background-size:200% auto;
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-    animation:shine 4s linear infinite;
-
-    text-shadow:
-        0 0 10px rgba(255,45,85,.4),
-        0 0 20px rgba(139,92,246,.4);
+    color:#ffffff;
 }
 
-@keyframes shine{
-    from{
-        background-position:0%;
-    }
-    to{
-        background-position:200%;
-    }
+.logo span{
+    color:#3b82f6;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:#1b1b2f;
+    color:white;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+input:focus{
+    box-shadow:0 0 15px #2563eb;
+}
+
+button{
+    width:100%;
+    margin-top:15px;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(90deg,#2563eb,#1d4ed8);
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 20px rgba(37,99,235,.6);
+}
+
+video{
+    width:100%;
+    margin-top:25px;
+    border-radius:18px;
+    overflow:hidden;
 }
 </style>
 
@@ -74,7 +117,7 @@ video{
 <div class="container">
 
 <h1 class="logo">
-ANiX <b>ViDEO STREAM</b>
+ANiX <span>ViDEO STREAM</span>
 </h1>
     
 <input
