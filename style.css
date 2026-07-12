@@ -54,11 +54,20 @@ video{
     padding:15px 18px;
     display:flex;
     align-items:center;
-    gap:12px;
+
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    gap:10px;
+
     background:linear-gradient(to top,rgba(0,0,0,.8),transparent);
     z-index:40;
 }
 
+.controls::-webkit-scrollbar{
+    display:none;
+}
 .controls button{
     background:none;
     border:none;
@@ -255,4 +264,19 @@ video{
     width:100%;
 }
 
+.icon-btn,
+.play-btn{
+    flex:0 0 auto;
+}
+
+#seek{
+    flex:1;
+    min-width:100px;
+}
+
+.time{
+    min-width:75px;
+    font-size:12px;
+    white-space:nowrap;
+}
 }
