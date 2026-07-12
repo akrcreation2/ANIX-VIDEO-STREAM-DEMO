@@ -505,3 +505,18 @@ showSpeedMenu();
 
 console.log("ANiX Video Stream Loaded");
 
+/* ---------- AUTO LOAD FROM URL ---------- */
+
+window.addEventListener("load", () => {
+
+    const params = new URLSearchParams(window.location.search);
+
+    const videoUrl = params.get("video");
+
+    if (!videoUrl) return;
+
+    urlInput.value = decodeURIComponent(videoUrl);
+
+    loadBtn.click();
+
+});
