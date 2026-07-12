@@ -132,15 +132,16 @@ right:0;
 bottom:0;
 
 display:flex;
+justify-content:center;   /* <-- Add this */
 align-items:center;
 
 gap:10px;
 
-padding:14px 16px;
+padding:15px;
 
 background:linear-gradient(
 to top,
-rgba(0,0,0,.88),
+rgba(0,0,0,.85),
 transparent);
 
 z-index:100;
@@ -225,13 +226,11 @@ margin-top:12px;
 
 #seek{
 
-flex:1;
+flex:0 0 260px;
 
 height:5px;
 
 accent-color:#00bfff;
-
-cursor:pointer;
 
 }
 
