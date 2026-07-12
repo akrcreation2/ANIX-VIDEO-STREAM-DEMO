@@ -154,4 +154,19 @@ video{
     min-width:80px;
 }
 
+.controls{
+    transition:opacity .3s ease;
+}
+
+.player-box{
+    position:relative;
+}
+
+.controls{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
 }
