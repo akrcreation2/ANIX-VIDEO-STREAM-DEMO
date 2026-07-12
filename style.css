@@ -169,4 +169,44 @@ video{
     bottom:0;
 }
 
+.settings-menu{
+    position:absolute;
+    right:20px;
+    bottom:80px;
+    width:240px;
+    background:#111;
+    border-radius:12px;
+    padding:15px;
+    display:none;
+    z-index:100;
+}
+
+.settings-item{
+    margin-bottom:15px;
+}
+
+.settings-item span{
+    display:block;
+    margin-bottom:8px;
+    color:#fff;
+}
+
+.settings-item select{
+    width:100%;
+    padding:10px;
+    background:#222;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+}
+
+.settings-item button{
+    width:100%;
+    padding:10px;
+    background:#1ea5ff;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+}
+
 }
